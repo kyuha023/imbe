@@ -12,7 +12,31 @@ def Message():
     content = request.get_json()
     content = content['userRequest']
     utterance = content['utterance']
-
+    
+    if utterance == "자리 있어?" :
+        camera = picamera.PiCamera()
+        camera.resolution = (800, 600)
+        camera.capture('ex1.jpg')
+        camera.close()
+    elif utterance == "자리 생기면 알려줘" :
+        while True:
+            camera = picamera.PiCamera()
+            camera.resolution = (800, 600)
+            camera.capture('ex1.jpg')
+            camera.close()
+    elif utterance == "온도 알려줘" :
+        while True:
+            camera = picamera.PiCamera()
+            camera.resolution = (800, 600)
+            camera.capture('ex1.jpg')
+            camera.close()
+    elif utterance == "온도 알려줘" :
+        while True:
+            camera = picamera.PiCamera()
+            camera.resolution = (800, 600)
+            camera.capture('ex1.jpg')
+            camera.close()
+            
     dataSend = {
         "version": "2.0",
         "template": {
@@ -27,4 +51,4 @@ def Message():
     }
     return jsonify(dataSend)
 if __name__ == "__main__":
- app.run(host='0.0.0.0', port=8000, debug=True) 
+    app.run(host='0.0.0.0', port=10034, debug=True) 
