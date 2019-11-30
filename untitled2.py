@@ -9,10 +9,10 @@ def Keyboard():
 
 @app.route('/message', methods=['POST'])
 def Message():
+    nowplace = 0
     content = request.get_json()
     content = content['userRequest']
     utterance = content['utterance']
-    
     if utterance == "자리 있어?" :
         camera = picamera.PiCamera()
         camera.resolution = (800, 600)
@@ -24,14 +24,8 @@ def Message():
             camera.resolution = (800, 600)
             camera.capture('ex1.jpg')
             camera.close()
+	if nowplace != 0 :
     elif utterance == "온도 알려줘" :
-        while True:
-            camera = picamera.PiCamera()
-            camera.resolution = (800, 600)
-            camera.capture('ex1.jpg')
-            camera.close()
-    elif utterance == "온도 알려줘" :
-        while True:
             camera = picamera.PiCamera()
             camera.resolution = (800, 600)
             camera.capture('ex1.jpg')
