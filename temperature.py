@@ -5,8 +5,8 @@ import datetime
 
 # initialize GPIO
 GPIO.setwarnings(False)
-GPIO.setmode(GPIO.BCM)
-GPIO.cleanup()
+GPIO.cleanup() #GPIO 모듈의 점유 리소스를 해제
+GPIO.setmode(GPIO.BCM) #핀 번호 지정을 브로드컴칩의 번호를 참조 
 
 # read data using pin 21
 instance = dht11.DHT11(pin=21)
